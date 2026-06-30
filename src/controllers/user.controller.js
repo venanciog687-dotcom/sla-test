@@ -52,7 +52,7 @@ class controller {
                 
                 userDb = await users.create({
                     Id: nextId,
-                    Username: `StumbleFusion-${nextId}`,
+                    Username: `StumbleFlix-${nextId}`,
                     DeviceId: DeviceId,
                     StumbleId: crypto.generateStumbleId(),
                     Country: country,
@@ -83,9 +83,9 @@ class controller {
                         { Name: "coins", Amount: 500000, secondsSince: 0, secondsPerUnit: 0, maxAmount: 0, lastGiven: now },
                         { Name: "stumble_coins", Amount: 0, secondsSince: 0, secondsPerUnit: 0, maxAmount: 0, lastGiven: now },
                         { Name: "remove_ads", Amount: 0, secondsSince: 0, secondsPerUnit: 0, maxAmount: 2, lastGiven: now },
-                        { Name: "video", Amount: 50, secondsSince: 0, secondsPerUnit: 0, maxAmount: 5000, lastGiven: now },
-                        { Name: "video_gems", Amount: 10, secondsSince: 0, secondsPerUnit: 5400, maxAmount: 10, lastGiven: now },
-                        { Name: "video_coins", Amount: 8, secondsSince: 0, secondsPerUnit: 10800, maxAmount: 8, lastGiven: now },
+                        { Name: "video", Amount: 50, secondsSince: 0, secondsPerUnit: 0, maxAmount: 50000000, lastGiven: now },
+                        { Name: "video_gems", Amount: 10, secondsSince: 0, secondsPerUnit: 50000000, maxAmount: 10, lastGiven: now },
+                        { Name: "video_coins", Amount: 8, secondsSince: 0, secondsPerUnit: 50000000, maxAmount: 8, lastGiven: now },
                         { Name: "special_video", Amount: 3, secondsSince: 0, secondsPerUnit: 28800, maxAmount: 3, lastGiven: now },
                         { Name: "skin_charge", Amount: 0, secondsSince: 0, secondsPerUnit: 0, maxAmount: 5, lastGiven: now },
                         { Name: "skin_purchase", Amount: 7, secondsSince: 0, secondsPerUnit: 86400, maxAmount: 7, lastGiven: now },
