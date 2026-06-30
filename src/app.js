@@ -4,22 +4,22 @@ const path = require("path");
 
 const app = express();
 
-// Database
-require("./services/mongo.connection");
-
 // Middlewares
 const { shield } = require("./middlewares");
 app.use(shield);
 
-// Necessário para JSON
+// Banco de dados
+require("./services/mongo.connection");
+
+// JSON
 app.use(express.json());
 
-// Rota principal (corrige o "Cannot GET /")
+// Rota principal (corrige o Cannot GET /)
 app.get("/", (req, res) => {
-    res.status(200).json({
+    res.json({
         status: "online",
         backend: "Stumble Hero Backend",
-        version: process.env.version || "dev"
+        version: process.env.version || "1.0.0"
     });
 });
 
@@ -36,7 +36,7 @@ app.use((req, res, next) => {
     next();
 });
 
-// Rotas da API
+// Rotas
 const stumbleRoutes = require("./routes");
 app.use("/", stumbleRoutes);
 
@@ -46,7 +46,7 @@ app.use(
     express.static(path.join(__dirname, "shared", "images"))
 );
 
-// Tratamento de rota inexistente
+// 404
 app.use((req, res) => {
     res.status(404).json({
         error: "Route not found"
